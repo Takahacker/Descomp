@@ -62,7 +62,7 @@ MUX2 :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
         port map(entradaA_MUX => Saida_RAM,
                  entradaB_MUX =>  instr(larguraDados-1 downto 0),
                  seletor_MUX => JMP ,
-                 saida_MUX => DIN_PC);       
+                 saida_MUX => DIN);       
 
 -- MUX para PC (incrementaPC ou endereço de salto JMP)
 MUX_PC_JMP : entity work.muxGenerico2x1 generic map (larguraDados => larguraEnderecos)

@@ -15,7 +15,7 @@ architecture comportamento of decoderInstru is
   constant SUB  : std_logic_vector(3 downto 0) := "0011";
   constant LDI : std_logic_vector(3 downto 0) := "0100";
   constant STA : std_logic_vector(3 downto 0):= "0101";
-  constant JMP: std_logic_vector(3 downto 0):= "0110";
+  constant JMP: std_logic_vector(3 downto 0):= "0110"
 
   begin
 saida <= "0000000" when opcode = NOP else

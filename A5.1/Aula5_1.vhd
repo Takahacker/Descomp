@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity Aula5 is
+entity Aula5_1 is
 -- Total de bits das entradas e saidas
   generic (larguraDados : natural := 8;
         larguraEnderecos : natural := 9;
@@ -18,7 +18,7 @@ entity Aula5 is
 end entity;
 
 
-architecture arquitetura of Aula5 is
+architecture arquitetura of Aula5_1 is
 
   signal MUX_REG1 : std_logic_vector (larguraDados-1 downto 0);
   signal REG1_ULA_A : std_logic_vector (larguraDados-1 downto 0);
