@@ -37,6 +37,7 @@ architecture arquitetura of Aula5 is
   signal JMP: std_logic;
   signal instr: std_logic_vector(12 downto 0);
   signal Saida_RAM: std_logic_vector(larguraDados-1 downto 0);
+  signal DIN_PC: std_logic_vector(larguraEnderecos-1 downto 0);
 
 begin
 
@@ -63,13 +64,28 @@ MUX2 :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
                  seletor_MUX => JMP ,
                  saida_MUX => DIN);       
 
+-- MUX para PC (incrementaPC ou endereço de salto JMP)
+MUX_PC_JMP : entity work.muxGenerico2x1 generic map (larguraDados => larguraEnderecos)
+  port map(
+    entradaA_MUX => proxPC,
+    entradaB_MUX => instr(8 downto 0), -- endereço de salto JMP
+    seletor_MUX => JMP,
+    saida_MUX => DIN_PC
+  );
+
 -- O port map completo do Acumulador.
 REGA : entity work.registradorGenerico   generic map (larguraDados => larguraDados)
           port map (DIN => Saida_ULA, DOUT => REG1_ULA_A, ENABLE => Habilita_A, CLK => CLK, RST => '0');
 
--- O port map completo do Program Counter.
-PC : entity work.registradorGenerico   generic map (larguraDados => larguraEnderecos)
-          port map (DIN => proxPC, DOUT => Endereco, ENABLE => '1', CLK => CLK, RST => '0');
+-- Program Counter
+PC : entity work.registradorGenerico generic map (larguraDados => larguraEnderecos)
+  port map(
+    DIN => DIN_PC,
+    DOUT => Endereco,
+    ENABLE => '1',
+    CLK => CLK,
+    RST => '0'
+  );
 
 incrementaPC :  entity work.somaConstante  generic map (larguraDados => larguraEnderecos, constante => 1)
         port map( entrada => Endereco, saida => proxPC);
