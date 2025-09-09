@@ -29,13 +29,13 @@ architecture assincrona of memoriaROM is
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
     
-    tmp(0) := LDI & "000000100"; 
-    tmp(1) := STA & "100000001";
-    tmp(2) := LDI & "000000011";
-    tmp(3) := STA & "100000000";
-    tmp(4) := SOMA & "100000000"; 
-    tmp(5) := SOMA & "100000000"; 
-    tmp(6) := SUB & "100000001"; 
+    tmp(0) := JMP & '0' & x"04"; 
+    tmp(1) := JMP & '0' & x"05";
+    tmp(2) := NOP & "000000000";
+    tmp(3) := NOP & "000000000";
+    tmp(4) := JMP & '0' & x"05"; 
+    tmp(5) := NOP & "000000000"; 
+    tmp(6) := NOP & "000000000"; 
     tmp(7) := NOP & "000000000"; 
   
     return tmp;	

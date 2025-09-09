@@ -33,7 +33,8 @@ architecture arquitetura of Aula5 is
   signal habLeituraMEM : std_logic;
   signal Habilita_A : std_logic;
   signal Operacao_ULA : std_logic_vector(1 downto 0);
-  
+  signal Destino: std_logic_vector(0 downto 8);
+  signal JMP: std_logic;
   signal instr: std_logic_vector(12 downto 0);
   signal Saida_RAM: std_logic_vector(larguraDados-1 downto 0);
 
@@ -55,6 +56,12 @@ MUX1 :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
                  entradaB_MUX =>  instr(larguraDados-1 downto 0),
                  seletor_MUX => SelMUX,
                  saida_MUX => MUX_REG1);
+
+MUX2 :  entity work.muxGenerico2x1  generic map (larguraDados => larguraDados)
+        port map(entradaA_MUX => Saida_RAM,
+                 entradaB_MUX =>  instr(larguraDados-1 downto 0),
+                 seletor_MUX => JMP ,
+                 saida_MUX => DIN);       
 
 -- O port map completo do Acumulador.
 REGA : entity work.registradorGenerico   generic map (larguraDados => larguraDados)

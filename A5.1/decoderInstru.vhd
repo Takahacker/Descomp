@@ -24,6 +24,6 @@ saida <= "0000000" when opcode = NOP else
          "0010010" when opcode = SUB else
          "0111000" when opcode = LDI else
          "0000001" when opcode = STA else
-         "1000000"
+         "1100000" when opcode = JMP else
          "0000000";  -- NOP para os opcodes Indefinidos
 end architecture;
