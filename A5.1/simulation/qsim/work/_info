@@ -1,0 +1,125 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 dC:/Users/marco/insper/6/descomp/aula4_gustavo/simulation/qsim
+T_opt
+!s110 1756855287
+V5jDmlC5^Y[0jiGAF81j:b3
+04 25 18 work aula4_gustavo_vhd_vec_tst aula4_gustavo_arch 1
+=1-508140fae422-68b77bf6-1b5-3bdc
+R1
+!s12b OEM100
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+Eaula4_gustavo
+Z3 w1756855284
+Z4 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 >D>R2d_S6gjU?;50QULVY3
+Z5 DPx8 cyclonev 19 cyclonev_components 0 22 ONcjb[o^6QUa5nInMXF]50
+Z6 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 imPaHK;ANVA2FmRDgd8SZ0
+Z7 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z8 DPx6 altera 11 dffeas_pack 0 22 zdIMR1XmDVjRfzNPY?MRj3
+Z9 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z10 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z11 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z12 DPx6 altera 28 altera_primitives_components 0 22 E4E]JL`Gg4N^O71N]`[G;0
+!i122 4
+R2
+Z13 8aula4_gustavo.vho
+Z14 Faula4_gustavo.vho
+l0
+L39 1
+V]W`L5RLhz>chjF_U4iDIN0
+!s100 V@l>;ib;acoLD@P;SUheH1
+Z15 OL;C;2023.3;77
+32
+Z16 !s110 1756855285
+!i10b 1
+Z17 !s108 1756855285.000000
+Z18 !s90 -work|work|aula4_gustavo.vho|
+Z19 !s107 aula4_gustavo.vho|
+!i113 0
+Z20 o-work work
+Z21 tExplicit 1 CvgOpt 0
+Astructure
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+DEx4 work 13 aula4_gustavo 0 22 ]W`L5RLhz>chjF_U4iDIN0
+!i122 4
+l307
+L50 2882
+VbTVV`E>0o0;UNnA71I7ko1
+!s100 oJ?LUI5=zii>^eA5a?L8_2
+R15
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Eaula4_gustavo_vhd_vec_tst
+Z22 w1756855283
+R10
+R11
+!i122 5
+R2
+Z23 8Waveform.vwf.vht
+Z24 FWaveform.vwf.vht
+l0
+L32 1
+V2AE4k31Z]mi66n^DZBlGR1
+!s100 [B^QA`bQOB<VhS_XFP>iA1
+R15
+32
+R16
+!i10b 1
+R17
+Z25 !s90 -work|work|Waveform.vwf.vht|
+Z26 !s107 Waveform.vwf.vht|
+!i113 0
+R20
+R21
+Aaula4_gustavo_arch
+R10
+R11
+DEx4 work 25 aula4_gustavo_vhd_vec_tst 0 22 2AE4k31Z]mi66n^DZBlGR1
+!i122 5
+l53
+L34 47
+VWI3YX=TljOF@ZKYh21_H91
+!s100 l_GKM32mc[09CO@[TCnU61
+R15
+32
+R16
+!i10b 1
+R17
+R25
+R26
+!i113 0
+R20
+R21

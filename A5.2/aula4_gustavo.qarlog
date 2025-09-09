@@ -1,0 +1,25 @@
+Quartus Prime Archive log --	C:/Users/marco/insper/6/descomp/aula4_gustavo/aula4_gustavo.qarlog
+
+Archive:	C:/Users/marco/insper/6/descomp/aula4_gustavo/aula4_gustavo.qar
+Date:		Tue Sep  2 20:23:08 2025
+Quartus Prime		23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/marco/insper/6/descomp/aula4_gustavo/Aula4_Gustavo.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/ULASomaSub.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/Waveform.vwf
+C:/Users/marco/insper/6/descomp/aula4_gustavo/aula4_gustavo.qpf
+C:/Users/marco/insper/6/descomp/aula4_gustavo/aula4_gustavo.qsf
+C:/Users/marco/insper/6/descomp/aula4_gustavo/decoderInstru.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/edgeDetector.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/memoriaRAM.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/memoriaROM.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/muxGenerico2x1.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/registradorGenerico.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/somaConstante.vhd
+C:/Users/marco/insper/6/descomp/aula4_gustavo/somadorGenerico.vhd
+c:/intelfpga_lite/23.1std/quartus/bin64/assignment_defaults.qdf
+	======= Total: 14 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.
