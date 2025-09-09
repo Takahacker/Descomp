@@ -1,0 +1,125 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+Z2 !s99 mlopt
+R0
+R2
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z3 d/home/mahoraga/Descomp/A5.1/simulation/qsim
+T_opt
+Z4 !s110 1757450749
+VBC08>0Mb2UhS:CVC]]9NU1
+04 19 12 work aula5_1_vhd_vec_tst aula5_1_arch 1
+=1-000ae431a4f1-68c091fd-9c0f7-68dc
+R1
+!s12b OEM100
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +acc
+tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+Eaula5_1
+Z5 w1757450748
+Z6 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 >D>R2d_S6gjU?;50QULVY3
+Z7 DPx8 cyclonev 19 cyclonev_components 0 22 ONcjb[o^6QUa5nInMXF]50
+Z8 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 imPaHK;ANVA2FmRDgd8SZ0
+Z9 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z10 DPx6 altera 11 dffeas_pack 0 22 zdIMR1XmDVjRfzNPY?MRj3
+Z11 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z12 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z13 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z14 DPx6 altera 28 altera_primitives_components 0 22 E4E]JL`Gg4N^O71N]`[G;0
+!i122 4
+R3
+Z15 8Aula5_1.vho
+Z16 FAula5_1.vho
+l0
+L39 1
+Vh9Mm]ezIV;?KQT1kmAk1<0
+!s100 `[PUXza02LNozjgzFlD8S1
+Z17 OL;C;2023.3;77
+32
+R4
+!i10b 1
+Z18 !s108 1757450749.000000
+Z19 !s90 -work|work|Aula5_1.vho|
+Z20 !s107 Aula5_1.vho|
+!i113 0
+Z21 o-work work
+Z22 tExplicit 1 CvgOpt 0
+Astructure
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+R14
+DEx4 work 7 aula5_1 0 22 h9Mm]ezIV;?KQT1kmAk1<0
+!i122 4
+l111
+L50 1034
+V]T9ZcjGP4HZoAgXKO`a6B1
+!s100 D0aW^>0mGMMbm;z7jJLz;0
+R17
+32
+R4
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R21
+R22
+Eaula5_1_vhd_vec_tst
+Z23 w1757450747
+R12
+R13
+!i122 5
+R3
+Z24 8Waveform1.vwf.vht
+Z25 FWaveform1.vwf.vht
+l0
+L32 1
+VbTM^bU5WX@VS24XB2=iiM1
+!s100 S[Ya:kj`gbz`bS1z[T4T82
+R17
+32
+R4
+!i10b 1
+R18
+Z26 !s90 -work|work|Waveform1.vwf.vht|
+Z27 !s107 Waveform1.vwf.vht|
+!i113 0
+R21
+R22
+Aaula5_1_arch
+R12
+R13
+DEx4 work 19 aula5_1_vhd_vec_tst 0 22 bTM^bU5WX@VS24XB2=iiM1
+!i122 5
+l53
+L34 47
+Vl09ACDR;b;VN0]2LUQ3]F0
+!s100 LZ`b>1c;2N=1ETFk?iJQl0
+R17
+32
+R4
+!i10b 1
+R18
+R26
+R27
+!i113 0
+R21
+R22

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula5_1
-Tue Sep  9 17:23:30 2025
+Tue Sep  9 17:44:08 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -10,7 +10,25 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |Aula5_1
+ 11. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_B_ULA
+ 12. Parameter Settings for User Entity Instance: registradorGenerico:REGA
+ 13. Parameter Settings for User Entity Instance: registradorGenerico:PC
+ 14. Parameter Settings for User Entity Instance: somaConstante:incrementaPC
+ 15. Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_PC_JMP
+ 16. Parameter Settings for User Entity Instance: ULASomaSub:ULA1
+ 17. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 18. Parameter Settings for User Entity Instance: memoriaRAM:RAM1
+ 19. Port Connectivity Checks: "registradorGenerico:PC"
+ 20. Port Connectivity Checks: "registradorGenerico:REGA"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +52,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                 ;
-+-----------------------------+------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Tue Sep  9 17:23:30 2025              ;
-; Quartus Prime Version       ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
-; Revision Name               ; Aula5_1                                        ;
-; Top-level Entity Name       ; Aula5_1                                        ;
-; Family                      ; Cyclone V                                      ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                      ;
-; Total registers             ; N/A until Partition Merge                      ;
-; Total pins                  ; N/A until Partition Merge                      ;
-; Total virtual pins          ; N/A until Partition Merge                      ;
-; Total block memory bits     ; N/A until Partition Merge                      ;
-; Total PLLs                  ; N/A until Partition Merge                      ;
-; Total DLLs                  ; N/A until Partition Merge                      ;
-+-----------------------------+------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Sep  9 17:44:08 2025          ;
+; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
+; Revision Name                   ; Aula5_1                                        ;
+; Top-level Entity Name           ; Aula5_1                                        ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 9                                              ;
+; Total pins                      ; 38                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -149,11 +172,239 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                               ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                        ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/decoderInstru.vhd       ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd          ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/memoriaROM.vhd          ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/muxGenerico2x1.vhd      ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/registradorGenerico.vhd ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/somaConstante.vhd       ;         ;
+; ULASomaSub.vhd                   ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/ULASomaSub.vhd          ;         ;
+; Aula5_1.vhd                      ; yes             ; User VHDL File  ; /home/mahoraga/Descomp/A5.1/Aula5_1.vhd             ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 11                       ;
+;                                             ;                          ;
+; Combinational ALUT usage for logic          ; 22                       ;
+;     -- 7 input functions                    ; 0                        ;
+;     -- 6 input functions                    ; 0                        ;
+;     -- 5 input functions                    ; 0                        ;
+;     -- 4 input functions                    ; 8                        ;
+;     -- <=3 input functions                  ; 14                       ;
+;                                             ;                          ;
+; Dedicated logic registers                   ; 9                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 38                       ;
+;                                             ;                          ;
+; Total DSP Blocks                            ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; memoriaROM:ROM1|memROM~2 ;
+; Maximum fan-out                             ; 10                       ;
+; Total fan-out                               ; 148                      ;
+; Average fan-out                             ; 1.38                     ;
++---------------------------------------------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                 ; Entity Name         ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
+; |Aula5_1                        ; 22 (1)              ; 9 (0)                     ; 0                 ; 0          ; 38   ; 0            ; |Aula5_1                            ; Aula5_1             ; work         ;
+;    |memoriaROM:ROM1|            ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5_1|memoriaROM:ROM1            ; memoriaROM          ; work         ;
+;    |muxGenerico2x1:MUX_B_ULA|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5_1|muxGenerico2x1:MUX_B_ULA   ; muxGenerico2x1      ; work         ;
+;    |registradorGenerico:PC|     ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5_1|registradorGenerico:PC     ; registradorGenerico ; work         ;
+;    |somaConstante:incrementaPC| ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula5_1|somaConstante:incrementaPC ; somaConstante       ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++---------------------------------------+---------------------------------------------+
+; Register name                         ; Reason for Removal                          ;
++---------------------------------------+---------------------------------------------+
+; registradorGenerico:REGA|DOUT[0..7]   ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 8 ;                                             ;
++---------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 9     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 9     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |Aula5_1 ;
++------------------+-------+----------------------------------------------+
+; Parameter Name   ; Value ; Type                                         ;
++------------------+-------+----------------------------------------------+
+; larguraDados     ; 8     ; Signed Integer                               ;
+; larguraEnderecos ; 9     ; Signed Integer                               ;
+; simulacao        ; true  ; Enumerated                                   ;
++------------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_B_ULA ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:REGA ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: registradorGenerico:PC ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: somaConstante:incrementaPC ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                 ;
+; constante      ; 1     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: muxGenerico2x1:MUX_PC_JMP ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; larguradados   ; 9     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ULASomaSub:ULA1 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; larguradados   ; 8     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaROM:ROM1 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; datawidth      ; 13    ; Signed Integer                      ;
+; addrwidth      ; 9     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: memoriaRAM:RAM1 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; datawidth      ; 8     ; Signed Integer                      ;
+; addrwidth      ; 8     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:PC" ;
++--------+-------+----------+------------------------+
+; Port   ; Type  ; Severity ; Details                ;
++--------+-------+----------+------------------------+
+; enable ; Input ; Info     ; Stuck at VCC           ;
+; rst    ; Input ; Info     ; Stuck at GND           ;
++--------+-------+----------+------------------------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "registradorGenerico:REGA" ;
++------+-------+----------+----------------------------+
+; Port ; Type  ; Severity ; Details                    ;
++------+-------+----------+----------------------------+
+; rst  ; Input ; Info     ; Stuck at GND               ;
++------+-------+----------+----------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 9                           ;
+;     SLD               ; 9                           ;
+; arriav_lcell_comb     ; 24                          ;
+;     arith             ; 9                           ;
+;         1 data inputs ; 9                           ;
+;     normal            ; 15                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 8                           ;
+; boundary_port         ; 38                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 2.12                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,7 +413,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Tue Sep  9 17:23:20 2025
+    Info: Processing started: Tue Sep  9 17:43:57 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula5_1 -c Aula5_1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -198,18 +449,66 @@ Info (12021): Found 2 design units, including 1 entities, in source file ULASoma
     Info (12022): Found design unit 1: ULASomaSub-comportamento File: /home/mahoraga/Descomp/A5.1/ULASomaSub.vhd Line: 14
     Info (12023): Found entity 1: ULASomaSub File: /home/mahoraga/Descomp/A5.1/ULASomaSub.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file Aula5_1.vhd
-    Info (12022): Found design unit 1: Aula5_1-arquitetura File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 21
+    Info (12022): Found design unit 1: Aula5_1-arquitetura File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 20
     Info (12023): Found entity 1: Aula5_1 File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 4
 Info (12127): Elaborating entity "Aula5_1" for the top level hierarchy
-Warning (10445): VHDL Subtype or Type Declaration warning at Aula5_1.vhd(36): subtype or type has null range File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 36
-Warning (10541): VHDL Signal Declaration warning at Aula5_1.vhd(37): used implicit default value for signal "JMP" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 37
-Error (10344): VHDL expression error at Aula5_1.vhd(65): expression has 9 elements, but must have 8 elements File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 65
-Error (10344): VHDL expression error at Aula5_1.vhd(65): expression has 8 elements, but must have 9 elements File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 65
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 3 warnings
-    Error: Peak virtual memory: 467 megabytes
-    Error: Processing ended: Tue Sep  9 17:23:30 2025
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:23
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_B_ULA" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 56
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REGA" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 66
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:PC" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 77
+Info (12128): Elaborating entity "somaConstante" for hierarchy "somaConstante:incrementaPC" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 87
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "muxGenerico2x1:MUX_PC_JMP" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 92
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "ULASomaSub:ULA1" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 102
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 112
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "decoderInstru:DEC1" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 117
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM1" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 121
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "memoriaRAM:RAM1|ram" is uninferred due to asynchronous read logic File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 27
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[0]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[1]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[2]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[3]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[4]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[5]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[6]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+    Warning (13049): Converted tri-state buffer "memoriaRAM:RAM1|dado_out[7]" feeding internal logic into a wire File: /home/mahoraga/Descomp/A5.1/memoriaRAM.vhd Line: 17
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 14
+    Warning (13410): Pin "Palavra_Controle[0]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 15
+    Warning (13410): Pin "Palavra_Controle[1]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 15
+    Warning (13410): Pin "Palavra_Controle[2]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 15
+    Warning (13410): Pin "Palavra_Controle[3]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 15
+    Warning (13410): Pin "Palavra_Controle[4]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 15
+    Warning (13410): Pin "EntradaB_ULA[3]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 16
+    Warning (13410): Pin "EntradaB_ULA[4]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 16
+    Warning (13410): Pin "EntradaB_ULA[5]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 16
+    Warning (13410): Pin "EntradaB_ULA[6]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 16
+    Warning (13410): Pin "EntradaB_ULA[7]" is stuck at GND File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 11
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 12
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 12
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/mahoraga/Descomp/A5.1/Aula5_1.vhd Line: 12
+Info (21057): Implemented 60 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 33 output pins
+    Info (21061): Implemented 22 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 478 megabytes
+    Info: Processing ended: Tue Sep  9 17:44:08 2025
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:25
 
 
