@@ -12,7 +12,9 @@ entity Aula5_2 is
     KEY              : in  std_logic_vector(3 downto 0);
     PC_OUT           : out std_logic_vector(larguraEnderecos-1 downto 0);
     Palavra_Controle : out std_logic_vector(5 downto 0);  -- [SelMUX,HabilitaA,Oper(1:0),re,we]
-    EntradaB_ULA     : out std_logic_vector(larguraDados-1 downto 0)
+    EntradaB_ULA     : out std_logic_vector(larguraDados-1 downto 0);
+    OpULA : out std_logic_vector(1 downto 0);
+    Out_RegA : out std_logic_vector(7 downto 0)
   );
 end entity;
 
@@ -174,5 +176,9 @@ architecture arquitetura of Aula5_2 is
 
   EntradaB_ULA     <= MUX_REG1;
   PC_OUT           <= Endereco;
-  Palavra_Controle <= SinaisCtrl7(5 downto 0);  -- sem o JMP (para manter 6 bits)
+  Palavra_Controle <= SinaisCtrl9; 
+  OpULA <=  Operacao_ULA;
+  Out_RegA <= REG1_ULA_A;
+  
+
   end architecture;
