@@ -48,6 +48,10 @@ architecture arquitetura of Aula5_2 is
 
   -- Clock
   signal CLK          : std_logic;
+
+  -- Constante zero (para comparação genérica)
+  constant ZERO : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
+
 begin
   -- Clock: simulação sem detector; placa com detector
   gravar: if simulacao generate
@@ -94,7 +98,7 @@ begin
     port map (entrada => Endereco, saida => proxPC);
 
   -- FlagIgual combinacional: só vale quando habFlag=1
-  FlagIgual <= '1' when (habFlag = '1' and Saida_ULA = (others => '0')) else '0';
+  FlagIgual <= '1' when (habFlag = '1' and Saida_ULA = ZERO) else '0';
 
   -- Lógica de desvio condicional
   SelMuxPC <= '1' when (JMP = '1') else
