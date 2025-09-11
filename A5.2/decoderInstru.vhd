@@ -15,15 +15,20 @@ architecture comportamento of decoderInstru is
   constant SUB  : std_logic_vector(3 downto 0) := "0011";
   constant LDI : std_logic_vector(3 downto 0) := "0100";
   constant STA : std_logic_vector(3 downto 0):= "0101";
-  constant JMP: std_logic_vector(3 downto 0):= "0110"
+  constant JMP: std_logic_vector(3 downto 0):= "0110";      
+  constant CEQ : std_logic_vector(3 downto 0) := "1000";
+  constant JEQ : std_logic_vector(3 downto 0) := "0111";
 
   begin
-saida <= "0000000" when opcode = NOP else
-         "0011010" when opcode = LDA else
-         "0010110" when opcode = SOMA else
-         "0010010" when opcode = SUB else
-         "0111000" when opcode = LDI else
-         "0000001" when opcode = STA else
-         "1000000"
-         "0000000";  -- NOP para os opcodes Indefinidos
+saida <= "000000000" when opcode = NOP else
+         "000110010" when opcode = LDA else  -- habA=1, oper=10, RD=1
+         "000101010" when opcode = SOMA else
+         "000100010" when opcode = SUB  else
+         "000111000" when opcode = LDI  else
+         "000000001" when opcode = STA  else
+         "100000000" when opcode = JMP  else
+         "010000000" when opcode = JEQ  else
+         "000000100" when opcode = CEQ  else
+         "000000000"; -- default
+           -- NOP para os opcodes Indefinidos
 end architecture;

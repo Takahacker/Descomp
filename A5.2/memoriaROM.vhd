@@ -22,6 +22,8 @@ architecture assincrona of memoriaROM is
   constant LDI : std_logic_vector(3 downto 0) := "0100";
   constant STA : std_logic_vector(3 downto 0):= "0101";
   constant JMP : std_logic_vector(3 downto 0):= "0110";
+  constant CEQ : std_logic_vector(3 downto 0) := "1000";
+  constant JEQ : std_logic_vector(3 downto 0) := "0111";
   
   type blocoMemoria is array(0 TO 2**addrWidth - 1) of std_logic_vector(dataWidth-1 DOWNTO 0);
 
@@ -29,15 +31,19 @@ architecture assincrona of memoriaROM is
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
     
-    tmp(0) := LDI & "000000100"; 
-    tmp(1) := STA & "100000001";
-    tmp(2) := LDI & "000000011";
-    tmp(3) := STA & "100000000";
-    tmp(4) := SOMA & "100000000"; 
-    tmp(5) := SOMA & "100000000"; 
-    tmp(6) := SUB & "100000001"; 
-    tmp(7) := NOP & "000000000"; 
-  
+    tmp(0) := JMP & "000000100";  -- JMP @4
+    tmp(1) := JEQ & "000001001";  -- JEQ @9
+    tmp(2) := NOP & "000000000"; 
+    tmp(3) := NOP & "000000000";
+    tmp(4) := LDI & "000000101";  -- LDI $5
+    tmp(5) := STA & "100000000";  -- STA @256
+    tmp(6) := CEQ & "100000000";  -- CEQ @256
+    tmp(7) := JMP & "000000001";  -- JMP @1
+    tmp(8) := NOP & "000000000";
+    tmp(9) := LDI & "000000100";  -- LDI $4
+    tmp(10):= CEQ & "100000000";  -- CEQ @256
+    tmp(11):= JEQ & "000000011";  -- JEQ @3
+    tmp(12):= JMP & "000001100";  -- JMP @12 (loop infinito)
     return tmp;	
 
     end initMemory;
