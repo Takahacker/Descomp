@@ -11,8 +11,7 @@ entity Aula5_2 is
     CLOCK_50         : in  std_logic;
     KEY              : in  std_logic_vector(3 downto 0);
     PC_OUT           : out std_logic_vector(larguraEnderecos-1 downto 0);
-    LEDR             : out std_logic_vector(9 downto 0);
-    Palavra_Controle : out std_logic_vector(5 downto 0);  
+    Palavra_Controle : out std_logic_vector(5 downto 0);  -- [SelMUX,HabilitaA,Oper(1:0),re,we]
     EntradaB_ULA     : out std_logic_vector(larguraDados-1 downto 0)
   );
 end entity;
@@ -27,36 +26,39 @@ architecture arquitetura of Aula5_2 is
   -- Instrução (opcode 12..9 | imm[8..0])
   signal instr        : std_logic_vector(12 downto 0);
 
-  -- Controle: 9 bits = [8]=JMP | [7]=JEQ | [6]=SelMUX | [5]=Hab_A | [4:3]=Oper | [2]=habFlag | [1]=re | [0]=we
+  -- Controle: 9 bits = [6]=JMP | [5]=SelMUX | [4]=Habilita_A | [3:2]=Oper | [1]=re | [0]=we
   signal SinaisCtrl9  : std_logic_vector(8 downto 0);
   signal SelMUX       : std_logic;
   signal Habilita_A   : std_logic;
   signal Operacao_ULA : std_logic_vector(1 downto 0);
   signal habLeituraMEM: std_logic;
   signal habEscritaMEM: std_logic;
-  signal JMP, JEQ     : std_logic;
-  signal habFlag      : std_logic;
+  signal JMP          : std_logic;
+  signal HabFlag      : std_logic;
+  signal JEQ          : std_logic;
+  signal SinalZero    : std_logic;
+  signal SaidaFlipFlop : std_logic;
+  signal SelMuxPC : std_logic;
 
   -- PC
   signal Endereco     : std_logic_vector(larguraEnderecos-1 downto 0);
   signal proxPC       : std_logic_vector(larguraEnderecos-1 downto 0);
   signal DIN_PC       : std_logic_vector(larguraEnderecos-1 downto 0);
 
-  -- Desvio condicional
-  signal SelMuxPC     : std_logic;
-  signal FlagIgual    : std_logic;
-
   -- Clock
   signal CLK          : std_logic;
 
-  -- Constante zero (para comparação genérica)
-  constant ZERO : std_logic_vector(larguraDados-1 downto 0) := (others => '0');
 
-begin
-  -- Clock: simulação sem detector; placa com detector
-  gravar: if simulacao generate
-    CLK <= KEY(0);
-  else generate
+  signal HabFlag      : std_logic;
+  signal JEQ          : std_logic;
+
+  -- PC
+  signal Endereco     : std_logic_vector(larguraEnderecos-1 downto 0);
+  signal proxPC       : std_logic_vector(larguraEnderecos-1 downto 0);
+  signal DIN_PC       : std_logic_vector(larguraEnderecos-1 downto 0);
+
+  -- Clock
+  signal CLK          : std_logic;
     detectorSub0: entity work.edgeDetector(bordaSubida)
       port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
   end generate gravar;
@@ -97,21 +99,13 @@ begin
     generic map (larguraDados => larguraEnderecos, constante => 1)
     port map (entrada => Endereco, saida => proxPC);
 
-  -- FlagIgual combinacional: só vale quando habFlag=1
-  FlagIgual <= '1' when (habFlag = '1' and Saida_ULA = ZERO) else '0';
-
-  -- Lógica de desvio condicional
-  SelMuxPC <= '1' when (JMP = '1') else
-              '1' when (JEQ = '1' and FlagIgual = '1') else
-              '0';
-
   -- MUX do PC: proxPC vs destino de salto instr[8..0]
   MUX_PC_JMP : entity work.muxGenerico2x1
     generic map (larguraDados => larguraEnderecos)
     port map (
       entradaA_MUX => proxPC,
       entradaB_MUX => instr(8 downto 0),
-      seletor_MUX  => SelMuxPC,
+      seletor_MUX  => JMP,
       saida_MUX    => DIN_PC
     );
 
@@ -122,7 +116,8 @@ begin
       entradaA => REG1_ULA_A,
       entradaB => MUX_REG1,
       saida    => Saida_ULA,
-      seletor  => Operacao_ULA
+      seletor  => Operacao_ULA,
+      zero => SinalZero
     );
 
   -- ROM (13 bits)
@@ -130,7 +125,7 @@ begin
     generic map (dataWidth => 13, addrWidth => larguraEnderecos)
     port map (Endereco => Endereco, Dado => instr);
 
-  -- DECODER: gera 9 sinais conforme a tabela
+  -- DECODER: gera 7 sinais conforme a tabela (ver abaixo)
   DEC1 : entity work.decoderInstru
     port map (opcode => instr(12 downto 9), saida => SinaisCtrl9);
 
@@ -146,21 +141,38 @@ begin
       dado_out => Saida_RAM
     );
 
+    -- Flag zero da ULA
+  FlagIgual: entity work.flipflop
+    port map(
+      DIN => SinalZero,
+      DOUT => ,
+      ENABLE => HabFlag,
+      CLK => CLK,
+      RST => '0'
+    );
+
+  -- Logica Desvio
+  LogicaDesvio: entity work.logicaDesvio
+    port map(
+      entradaJMP => JMP,
+      entrada_flag => SaidaFlipFlop,
+      entrada_JEQ => JEQ,
+      saida => SelMuxPC
+    );
+
   -- Descompactação dos sinais de controle
   JMP           <= SinaisCtrl9(8);
   JEQ           <= SinaisCtrl9(7);
   SelMUX        <= SinaisCtrl9(6);
   Habilita_A    <= SinaisCtrl9(5);
   Operacao_ULA  <= SinaisCtrl9(4 downto 3);
-  habFlag       <= SinaisCtrl9(2);
+  HabFlag       <= SinaisCtrl9(2);
   habLeituraMEM <= SinaisCtrl9(1);
   habEscritaMEM <= SinaisCtrl9(0);
 
   -- Saídas de debug/observação
-  LEDR(9)          <= FlagIgual;       -- mostra a flag
-  LEDR(8 downto 7) <= Operacao_ULA;
-  LEDR(6 downto 0) <= REG1_ULA_A(6 downto 0);
+
   EntradaB_ULA     <= MUX_REG1;
   PC_OUT           <= Endereco;
-  Palavra_Controle <= SinaisCtrl9(5 downto 0);  
-end architecture;
+  Palavra_Controle <= SinaisCtrl7(5 downto 0);  -- sem o JMP (para manter 6 bits)
+  end architecture;
