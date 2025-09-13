@@ -11,7 +11,7 @@ entity Aula5_2 is
     CLOCK_50         : in  std_logic;
     KEY              : in  std_logic_vector(3 downto 0);
     PC_OUT           : out std_logic_vector(larguraEnderecos-1 downto 0);
-    Palavra_Controle : out std_logic_vector(5 downto 0);  -- [SelMUX,HabilitaA,Oper(1:0),re,we]
+    Palavra_Controle : out std_logic_vector(8 downto 0);  -- [SelMUX,HabilitaA,Oper(1:0),re,we]
     EntradaB_ULA     : out std_logic_vector(larguraDados-1 downto 0);
     OpULA : out std_logic_vector(1 downto 0);
     Out_RegA : out std_logic_vector(7 downto 0)
@@ -49,22 +49,18 @@ architecture arquitetura of Aula5_2 is
 
   -- Clock
   signal CLK          : std_logic;
+  
+  
+ begin
+ 
+detectorSub0: entity work.edgeDetector(bordaSubida)
+  port map (
+    clk     => CLOCK_50,
+    entrada => not KEY(0),
+    saida   => CLK
+  );
 
-
-  signal HabFlag      : std_logic;
-  signal JEQ          : std_logic;
-
-  -- PC
-  signal Endereco     : std_logic_vector(larguraEnderecos-1 downto 0);
-  signal proxPC       : std_logic_vector(larguraEnderecos-1 downto 0);
-  signal DIN_PC       : std_logic_vector(larguraEnderecos-1 downto 0);
-
-  -- Clock
-  signal CLK          : std_logic;
-    detectorSub0: entity work.edgeDetector(bordaSubida)
-      port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
-  end generate gravar;
-
+  
   -- MUX: entrada B da ULA (RAM vs imediato instr[7..0])
   MUX_B_ULA : entity work.muxGenerico2x1
     generic map (larguraDados => larguraDados)
@@ -107,7 +103,7 @@ architecture arquitetura of Aula5_2 is
     port map (
       entradaA_MUX => proxPC,
       entradaB_MUX => instr(8 downto 0),
-      seletor_MUX  => JMP,
+      seletor_MUX  => SelMuxPC,   
       saida_MUX    => DIN_PC
     );
 
@@ -144,19 +140,20 @@ architecture arquitetura of Aula5_2 is
     );
 
     -- Flag zero da ULA
-  FlagIgual: entity work.flipflop
-    port map(
-      DIN => SinalZero,
-      DOUT => ,
-      ENABLE => HabFlag,
-      CLK => CLK,
-      RST => '0'
-    );
+FlagIgual: entity work.flipflop
+  port map(
+    DIN    => SinalZero,
+    DOUT   => SaidaFlipFlop,
+    ENABLE => HabFlag,
+    CLK    => CLK,
+    RST    => '0'
+  );
+
 
   -- Logica Desvio
   LogicaDesvio: entity work.logicaDesvio
     port map(
-      entradaJMP => JMP,
+      entrada_JMP => JMP,
       entrada_flag => SaidaFlipFlop,
       entrada_JEQ => JEQ,
       saida => SelMuxPC

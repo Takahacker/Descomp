@@ -1,0 +1,85 @@
+Determining the location of the ModelSim executable...
+
+Using: /home/mahoraga/intelFPGA_lite/23.1std/questa_fse/linux_x86_64/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula5_2 -c Aula5_2 --vector_source="/home/mahoraga/Descomp/A5.2/Waveform1.vwf" --testbench_file="/home/mahoraga/Descomp/A5.2/simulation/qsim/Waveform1.vwf.vht"
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition    Info: Copyright (C) 2024  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sat Sep 13 17:21:37 2025Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula5_2 -c Aula5_2 --vector_source=/home/mahoraga/Descomp/A5.2/Waveform1.vwf --testbench_file=/home/mahoraga/Descomp/A5.2/simulation/qsim/Waveform1.vwf.vhtInfo (119006): Selected device 5CEBA4F23C7 for design "Aula5_2"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+ (201005): Ignoring output pin "OpULA[0]" in vector source file when writing test bench files
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/mahoraga/Descomp/A5.2/simulation/qsim/" Aula5_2 -c Aula5_2
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition    Info: Copyright (C) 2024  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sat Sep 13 17:21:39 2025Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/mahoraga/Descomp/A5.2/simulation/qsim/ Aula5_2 -c Aula5_2Info (119006): Selected device 5CEBA4F23C7 for design "Aula5_2"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file Aula5_2.vho in folder "/home/mahoraga/Descomp/A5.2/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 670 megabytes    Info: Processing ended: Sat Sep 13 17:21:39 2025    Info: Elapsed time: 00:00:00    Info: Total CPU time (on all processors): 00:00:01
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/mahoraga/Descomp/A5.2/simulation/qsim/Aula5_2.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/home/mahoraga/intelFPGA_lite/23.1std/questa_fse/linux_x86_64//vsim -c -do Aula5_2.do
+
+Reading pref.tcl
+# 2023.3
+# do Aula5_2.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:21:40 on Sep 13,2025
+# vcom -work work Aula5_2.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package dffeas_pack
+# -- Loading package altera_primitives_components
+# -- Loading package altera_lnsim_components
+# -- Loading package cyclonev_atom_pack
+# -- Loading package cyclonev_components
+# -- Compiling entity Aula5_2
+# -- Compiling architecture structure of Aula5_2
+# End time: 17:21:40 on Sep 13,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
+# Start time: 17:21:40 on Sep 13,2025
+# vcom -work work Waveform1.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Aula5_2_vhd_vec_tst
+# -- Compiling architecture Aula5_2_arch of Aula5_2_vhd_vec_tst
+# End time: 17:21:40 on Sep 13,2025, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -voptargs="+ACC" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Aula5_2_vhd_vec_tst # Start time: 17:21:40 on Sep 13,2025# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Intel Starter FPGA Edition-64# //  Version 2023.3 linux_x86_64 Jul 17 2023# //# //  Copyright 1991-2023 Mentor Graphics Corporation# //  All Rights Reserved.# //# //  QuestaSim and its associated documentation contain trade# //  secrets and commercial or financial information that are the property of# //  Mentor Graphics Corporation and are privileged, confidential,# //  and exempt from disclosure under the Freedom of Information Act,# //  5 U.S.C. Section 552. Furthermore, this information# //  is prohibited from disclosure under the Trade Secrets Act,# //  18 U.S.C. Section 1905.# //
+# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.aula5_2_vhd_vec_tst(aula5_2_arch)#1# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading altera.dffeas_pack# Loading altera.altera_primitives_components# Loading altera_lnsim.altera_lnsim_components# Loading cyclonev.cyclonev_atom_pack(body)# Loading cyclonev.cyclonev_components# Loading work.aula5_2(structure)#1# Loading ieee.std_logic_arith(body)# Loading cyclonev.cyclonev_io_obuf(arch)#1# Loading cyclonev.cyclonev_io_ibuf(arch)#1# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#1# Loading altera.dffeas(vital_dffeas)#1# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#2# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#3# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#4# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#5# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#6# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#7# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#8# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#9# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#10# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#11# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#12# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#13# Loading altera.dffeas(vital_dffeas)#2# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#14# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#15# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#16# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#17# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#18# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#19# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#20# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#21# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#22# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#23# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#24# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#25# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#26# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#27# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#28# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#29# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#30# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#31# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#32# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#33# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#34# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#35# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#36# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#37# Loading altera.dffeas(vital_dffeas)#3# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#38# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#39# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#40# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#41# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#42# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#43# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#44
+# after#35
+# End time: 17:21:41 on Sep 13,2025, Elapsed time: 0:00:01# Errors: 0, Warnings: 0
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/mahoraga/Descomp/A5.2/Waveform1.vwf...
+
+Reading /home/mahoraga/Descomp/A5.2/simulation/qsim/Aula5_2.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to /home/mahoraga/Descomp/A5.2/simulation/qsim/Aula5_2_20250913172141.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

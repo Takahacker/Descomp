@@ -1,0 +1,147 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/mahoraga/Descomp/A5.2/simulation/qsim
+T_opt
+Z3 !s110 1757794900
+VFP;5M9E9D<Qm1HBzf=P<a0
+04 19 12 work aula5_2_vhd_vec_tst aula5_2_arch 1
+=1-000ae431a4f1-68c5d254-8c1d9-42ac
+R1
+!s12b OEM100
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +ACC
+tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+Eaula5_2
+Z4 w1757794899
+Z5 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 >D>R2d_S6gjU?;50QULVY3
+Z6 DPx8 cyclonev 19 cyclonev_components 0 22 ONcjb[o^6QUa5nInMXF]50
+Z7 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 imPaHK;ANVA2FmRDgd8SZ0
+Z8 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z9 DPx6 altera 11 dffeas_pack 0 22 zdIMR1XmDVjRfzNPY?MRj3
+Z10 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z11 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z12 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z13 DPx6 altera 28 altera_primitives_components 0 22 E4E]JL`Gg4N^O71N]`[G;0
+!i122 34
+R2
+Z14 8Aula5_2.vho
+Z15 FAula5_2.vho
+l0
+L39 1
+VUK5^`PA3GcSMbeg7cFaF73
+!s100 =FZG0O]0ddm7Cg@V2GnD^1
+Z16 OL;C;2023.3;77
+32
+R3
+!i10b 1
+Z17 !s108 1757794900.000000
+Z18 !s90 -work|work|Aula5_2.vho|
+Z19 !s107 Aula5_2.vho|
+!i113 0
+Z20 o-work work
+Z21 tExplicit 1 CvgOpt 0
+Astructure
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+R13
+DEx4 work 7 aula5_2 0 22 UK5^`PA3GcSMbeg7cFaF73
+!i122 34
+l266
+L51 2768
+V3Ze[hhLoiMIJHCMh^dEe93
+!s100 P@o>L:4g5AAljzbaX5;LW3
+R16
+32
+R3
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Eaula5_2_vhd_vec_tst
+Z22 w1757794898
+R11
+R12
+!i122 35
+R2
+Z23 8Waveform1.vwf.vht
+Z24 FWaveform1.vwf.vht
+l0
+L32 1
+VaPN:NA:97P_7_T<Ej:Yl60
+!s100 _KB1lk9<l046H08BB=SZH0
+R16
+32
+R3
+!i10b 1
+R17
+Z25 !s90 -work|work|Waveform1.vwf.vht|
+Z26 !s107 Waveform1.vwf.vht|
+!i113 0
+R20
+R21
+Aaula5_2_arch
+R11
+R12
+DEx4 work 19 aula5_2_vhd_vec_tst 0 22 aPN:NA:97P_7_T<Ej:Yl60
+!i122 35
+l55
+L34 49
+V3JAm6];;efG]37gelKdhi1
+!s100 J2m;5ifWMSd8B8^UQ7cB>0
+R16
+32
+R3
+!i10b 1
+R17
+R25
+R26
+!i113 0
+R20
+R21

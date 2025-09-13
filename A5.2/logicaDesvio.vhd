@@ -6,14 +6,11 @@ entity logicaDesvio is
     entrada_JMP: in std_logic;
     entrada_flag : in std_logic;
     entrada_JEQ : in std_logic;
-    entrada_JSR: in std_logic;
-    entrada_RET: in std_logic;
-    saida : out std_logic_vector(1 downto 0)
+    saida : out std_logic
   );
 end entity;
 
 architecture comportamento of logicaDesvio is
   begin
-    saida(0) <= entrada_JMP or (entrada_JEQ and entrada_flag) or entrada_JSR;
-    saida(1) <= entrada_RET;
+    saida <= entrada_JMP or (entrada_JEQ and entrada_flag);
 end architecture;
