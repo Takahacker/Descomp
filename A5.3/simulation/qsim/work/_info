@@ -1,0 +1,131 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11e vcom 2023.3 2023.07, Jul 17 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/mahoraga/Descomp/A5.3/simulation/qsim
+T_opt
+!s110 1757813812
+VMYeTO1=lLYc7`hQ]IAaBG2
+04 16 9 work a5_3_vhd_vec_tst a5_3_arch 1
+=1-000ae431a4f1-68c61c30-e6ead-121b
+R1
+!s12b OEM100
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim +ACC
+tCvgOpt 0
+n@_opt
+OL;O;2023.3;77
+Ea5_3
+Z3 w1757813807
+Z4 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 >D>R2d_S6gjU?;50QULVY3
+Z5 DPx8 cyclonev 19 cyclonev_components 0 22 ONcjb[o^6QUa5nInMXF]50
+Z6 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 imPaHK;ANVA2FmRDgd8SZ0
+Z7 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z8 DPx6 altera 11 dffeas_pack 0 22 zdIMR1XmDVjRfzNPY?MRj3
+Z9 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z10 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z11 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z12 DPx6 altera 28 altera_primitives_components 0 22 E4E]JL`Gg4N^O71N]`[G;0
+!i122 16
+R2
+Z13 8A5_3.vho
+Z14 FA5_3.vho
+l0
+L39 1
+VUiKgZdTd0`ORc?7XmO5EQ2
+!s100 YhAcLb2D_HQVj?Yo@CjI^0
+Z15 OL;C;2023.3;77
+32
+Z16 !s110 1757813808
+!i10b 1
+Z17 !s108 1757813808.000000
+Z18 !s90 -work|work|A5_3.vho|
+Z19 !s107 A5_3.vho|
+!i113 0
+Z20 o-work work
+Z21 tExplicit 1 CvgOpt 0
+Astructure
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+R12
+DEx4 work 4 a5_3 0 22 UiKgZdTd0`ORc?7XmO5EQ2
+!i122 16
+l383
+L51 3776
+VSBb=E3TUHPMHh46Mbh:Db2
+!s100 9cCIX:N2acB>3gJD65Wf?3
+R15
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 0
+R20
+R21
+Ea5_3_vhd_vec_tst
+Z22 w1757813806
+R10
+R11
+!i122 17
+R2
+Z23 8Waveform.vwf.vht
+Z24 FWaveform.vwf.vht
+l0
+L32 1
+VZR^iebdnzM6:MVFnCj3nZ3
+!s100 AIMFN^DP<k[e_GajDn8451
+R15
+32
+R16
+!i10b 1
+R17
+Z25 !s90 -work|work|Waveform.vwf.vht|
+Z26 !s107 Waveform.vwf.vht|
+!i113 0
+R20
+R21
+Aa5_3_arch
+R10
+R11
+DEx4 work 16 a5_3_vhd_vec_tst 0 22 ZR^iebdnzM6:MVFnCj3nZ3
+!i122 17
+l55
+L34 50
+VS^551<ef=[G1@;R9AR`_F2
+!s100 AEWA[[fkb=ScmiAEmUIDL3
+R15
+32
+R16
+!i10b 1
+R17
+R25
+R26
+!i113 0
+R20
+R21
