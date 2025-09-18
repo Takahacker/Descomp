@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition"
 
--- DATE "09/18/2025 13:44:05"
+-- DATE "09/18/2025 13:55:22"
 
 -- 
 -- Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -38,7 +38,7 @@ ENTITY 	A7 IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	KEY : IN std_logic_vector(3 DOWNTO 0);
-	LEDR : BUFFER std_logic_vector(9 DOWNTO 0)
+	LEDR : OUT std_logic_vector(9 DOWNTO 0)
 	);
 END A7;
 

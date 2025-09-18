@@ -68,6 +68,7 @@ architecture arquitetura of CPU is
   
 
 begin
+	instr <= INSTRUCTION_IN;
 
   -- MUX: entrada B da ULA (RAM vs imediato instr[7..0])
   MUX_B_ULA : entity work.muxGenerico2x1

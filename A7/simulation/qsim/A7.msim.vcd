@@ -3,7 +3,7 @@ $comment
 		vcd file A7.msim.vcd -direction
 $end
 $date
-	Thu Sep 18 13:44:06 2025
+	Thu Sep 18 13:55:24 2025
 $end
 $version
 	Questa Intel Starter FPGA Edition Version 2023.3
@@ -114,6 +114,10 @@ x"
 x#
 x$
 1%
+x:
+x;
+x<
+1=
 0&
 0'
 0(
@@ -124,10 +128,6 @@ x$
 0-
 0.
 0/
-x:
-x;
-x<
-1=
 $end
 #40000
 0%

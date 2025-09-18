@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:44:05 on Sep 18,2025
+# Start time: 13:55:23 on Sep 18,2025
 # vcom -work work A7.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -14,20 +14,20 @@
 # -- Loading package cyclonev_components
 # -- Compiling entity A7
 # -- Compiling architecture structure of A7
-# End time: 13:44:05 on Sep 18,2025, Elapsed time: 0:00:00
+# End time: 13:55:23 on Sep 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:44:06 on Sep 18,2025
+# Start time: 13:55:23 on Sep 18,2025
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity A7_vhd_vec_tst
 # -- Compiling architecture A7_arch of A7_vhd_vec_tst
-# End time: 13:44:06 on Sep 18,2025, Elapsed time: 0:00:00
+# End time: 13:55:23 on Sep 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -voptargs="+acc" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.A7_vhd_vec_tst 
-# Start time: 13:44:06 on Sep 18,2025
+# Start time: 13:55:23 on Sep 18,2025
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
 # ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
@@ -59,5 +59,5 @@
 # Loading cyclonev.cyclonev_io_obuf(arch)#1
 # Loading cyclonev.cyclonev_io_ibuf(arch)#1
 # after#33
-# End time: 13:44:06 on Sep 18,2025, Elapsed time: 0:00:00
+# End time: 13:55:24 on Sep 18,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1

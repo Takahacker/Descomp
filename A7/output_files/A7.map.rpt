@@ -1,5 +1,5 @@
 Analysis & Synthesis report for A7
-Thu Sep 18 13:43:23 2025
+Thu Sep 18 13:55:03 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -14,36 +14,37 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |A7
- 12. Parameter Settings for User Entity Instance: CPU:CPU
- 13. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_B_ULA
- 14. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA
- 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
- 16. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
- 17. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_PC
- 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:EndRetorno
- 19. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
- 20. Parameter Settings for User Entity Instance: CPU:CPU|flipflop:FlagIgual
- 21. Parameter Settings for User Entity Instance: memoriaROM:ROM
- 22. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 23. Parameter Settings for User Entity Instance: registradorGenerico:RegLed0
- 24. Parameter Settings for User Entity Instance: flipflop:FlipFlopLed1
- 25. Parameter Settings for User Entity Instance: flipflop:FlipFlopLed2
- 26. Port Connectivity Checks: "flipflop:FlipFlopLed2"
- 27. Port Connectivity Checks: "flipflop:FlipFlopLed1"
- 28. Port Connectivity Checks: "registradorGenerico:RegLed0"
- 29. Port Connectivity Checks: "decoder3x8:Dec2"
- 30. Port Connectivity Checks: "decoder3x8:Dec1"
- 31. Port Connectivity Checks: "CPU:CPU|flipflop:FlagIgual"
- 32. Port Connectivity Checks: "CPU:CPU|registradorGenerico:EndRetorno"
- 33. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 34. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGA"
- 35. Port Connectivity Checks: "CPU:CPU"
- 36. Post-Synthesis Netlist Statistics for Top Partition
- 37. Elapsed Time Per Partition
- 38. Analysis & Synthesis Messages
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |A7
+ 13. Parameter Settings for User Entity Instance: CPU:CPU
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX_B_ULA
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX_PC
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:EndRetorno
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|flipflop:FlagIgual
+ 22. Parameter Settings for User Entity Instance: memoriaROM:ROM
+ 23. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 24. Parameter Settings for User Entity Instance: registradorGenerico:RegLed0
+ 25. Parameter Settings for User Entity Instance: flipflop:FlipFlopLed1
+ 26. Parameter Settings for User Entity Instance: flipflop:FlipFlopLed2
+ 27. Port Connectivity Checks: "flipflop:FlipFlopLed2"
+ 28. Port Connectivity Checks: "flipflop:FlipFlopLed1"
+ 29. Port Connectivity Checks: "registradorGenerico:RegLed0"
+ 30. Port Connectivity Checks: "decoder3x8:Dec2"
+ 31. Port Connectivity Checks: "decoder3x8:Dec1"
+ 32. Port Connectivity Checks: "CPU:CPU|flipflop:FlagIgual"
+ 33. Port Connectivity Checks: "CPU:CPU|registradorGenerico:EndRetorno"
+ 34. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 35. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGA"
+ 36. Port Connectivity Checks: "CPU:CPU"
+ 37. Post-Synthesis Netlist Statistics for Top Partition
+ 38. Elapsed Time Per Partition
+ 39. Analysis & Synthesis Messages
 
 
 
@@ -70,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Sep 18 13:43:23 2025          ;
+; Analysis & Synthesis Status     ; Successful - Thu Sep 18 13:55:03 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; A7                                             ;
 ; Top-level Entity Name           ; A7                                             ;
@@ -257,16 +258,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------+---------------------------------------------+
 ; Register name                                     ; Reason for Removal                          ;
 +---------------------------------------------------+---------------------------------------------+
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[0..8] ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|registradorGenerico:REGA|DOUT[0]          ; Stuck at GND due to stuck port clock        ;
+; CPU:CPU|registradorGenerico:PC|DOUT[0..8]         ; Stuck at GND due to stuck port clock        ;
 ; CPU:CPU|flipflop:FlagIgual|DOUT                   ; Lost fanout                                 ;
-; CPU:CPU|registradorGenerico:EndRetorno|DOUT[1..8] ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|registradorGenerico:REGA|DOUT[1..7]       ; Stuck at GND due to stuck port clock        ;
 ; registradorGenerico:RegLed0|DOUT[0..7]            ; Stuck at GND due to stuck port clock_enable ;
 ; flipflop:FlipFlopLed1|DOUT                        ; Stuck at GND due to stuck port clock_enable ;
 ; flipflop:FlipFlopLed2|DOUT                        ; Stuck at GND due to stuck port clock_enable ;
-; CPU:CPU|registradorGenerico:REGA|DOUT[0..7]       ; Stuck at GND due to stuck port clock_enable ;
-; CPU:CPU|registradorGenerico:EndRetorno|DOUT[0]    ; Lost fanout                                 ;
-; CPU:CPU|registradorGenerico:PC|DOUT[0..8]         ; Lost fanout                                 ;
 ; Total Number of Removed Registers = 37            ;                                             ;
 +---------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                      ;
++------------------------------------------------+--------------------------------+--------------------------------------------------------------------------------+
+; Register name                                  ; Reason for Removal             ; Registers Removed due to This Register                                         ;
++------------------------------------------------+--------------------------------+--------------------------------------------------------------------------------+
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[0] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[0], CPU:CPU|flipflop:FlagIgual|DOUT,       ;
+;                                                ; due to stuck port clock_enable ; CPU:CPU|registradorGenerico:REGA|DOUT[1], registradorGenerico:RegLed0|DOUT[1], ;
+;                                                ;                                ; registradorGenerico:RegLed0|DOUT[2], registradorGenerico:RegLed0|DOUT[3],      ;
+;                                                ;                                ; registradorGenerico:RegLed0|DOUT[4], registradorGenerico:RegLed0|DOUT[5],      ;
+;                                                ;                                ; registradorGenerico:RegLed0|DOUT[6], registradorGenerico:RegLed0|DOUT[7]       ;
+; CPU:CPU|registradorGenerico:REGA|DOUT[0]       ; Stuck at GND                   ; registradorGenerico:RegLed0|DOUT[0], flipflop:FlipFlopLed1|DOUT,               ;
+;                                                ; due to stuck port clock        ; flipflop:FlipFlopLed2|DOUT                                                     ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[1] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[1]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[2] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[2]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[3] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[3]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[4] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[4]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[5] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[5]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[6] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[6]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[7] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[7]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
+; CPU:CPU|registradorGenerico:EndRetorno|DOUT[8] ; Stuck at GND                   ; CPU:CPU|registradorGenerico:PC|DOUT[8]                                         ;
+;                                                ; due to stuck port clock_enable ;                                                                                ;
++------------------------------------------------+--------------------------------+--------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -289,7 +321,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 1:1                ; 8 bits    ; 0 LEs         ; 0 LEs                ; 0 LEs                  ; No         ; |A7|CPU:CPU|ULASomaSub:ULA1|saida[2]    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |A7|CPU:CPU|decoderInstru:DEC1|saida[3] ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |A7|CPU:CPU|decoderInstru:DEC1|saida[5] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
@@ -572,7 +604,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Thu Sep 18 13:43:12 2025
+    Info: Processing started: Thu Sep 18 13:54:52 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off A7 -c A7
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -625,17 +657,16 @@ Info (12021): Found 2 design units, including 1 entities, in source file registr
 Info (12127): Elaborating entity "A7" for the top level hierarchy
 Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/mahoraga/Descomp/A7/A7.vhd Line: 60
 Warning (10541): VHDL Signal Declaration warning at CPU.vhd(28): used implicit default value for signal "Saida_RAM" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 28
-Warning (10541): VHDL Signal Declaration warning at CPU.vhd(31): used implicit default value for signal "instr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 31
 Warning (10541): VHDL Signal Declaration warning at CPU.vhd(56): used implicit default value for signal "CLK" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 56
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_B_ULA" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 73
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGA" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 83
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 94
-Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 104
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_PC" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 109
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 132
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DEC1" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 143
-Info (12128): Elaborating entity "flipflop" for hierarchy "CPU:CPU|flipflop:FlagIgual" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 148
-Info (12128): Elaborating entity "logicaDesvio" for hierarchy "CPU:CPU|logicaDesvio:LogicaDesvio" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 158
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX_B_ULA" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 74
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGA" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 84
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:PC" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 95
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 105
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX_PC" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 110
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 133
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DEC1" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 144
+Info (12128): Elaborating entity "flipflop" for hierarchy "CPU:CPU|flipflop:FlagIgual" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 149
+Info (12128): Elaborating entity "logicaDesvio" for hierarchy "CPU:CPU|logicaDesvio:LogicaDesvio" File: /home/mahoraga/Descomp/A7/CPU.vhd Line: 159
 Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM" File: /home/mahoraga/Descomp/A7/A7.vhd Line: 76
 Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/mahoraga/Descomp/A7/A7.vhd Line: 84
 Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:Dec1" File: /home/mahoraga/Descomp/A7/A7.vhd Line: 101
@@ -652,7 +683,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/mahoraga/Descomp/A7/A7.vhd Line: 13
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/mahoraga/Descomp/A7/A7.vhd Line: 13
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/mahoraga/Descomp/A7/A7.vhd Line: 13
-Info (17049): 11 registers lost all their fanouts during netlist optimizations.
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 5 input pin(s) that do not drive logic
@@ -664,10 +695,10 @@ Warning (21074): Design contains 5 input pin(s) that do not drive logic
 Info (21057): Implemented 15 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 10 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 484 megabytes
-    Info: Processing ended: Thu Sep 18 13:43:23 2025
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 478 megabytes
+    Info: Processing ended: Thu Sep 18 13:55:03 2025
     Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:25
+    Info: Total CPU time (on all processors): 00:00:26
 
 

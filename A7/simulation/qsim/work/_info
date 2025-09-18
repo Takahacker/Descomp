@@ -5,6 +5,8 @@ Z0 !s12c _opt
 Z1 !s99 nomlopt
 R0
 R1
+R0
+R1
 !s11e vcom 2023.3 2023.07, Jul 17 2023
 13
 !s112 1.1
@@ -14,10 +16,10 @@ R1
 cModel Technology
 Z2 d/home/mahoraga/Descomp/A7/simulation/qsim
 T_opt
-Z3 !s110 1758213846
-VoX:J?J>^J?nj^^BoEZz=^1
+Z3 !s110 1758214523
+Vfh:0_LgfkMN>DZ4k^Sei50
 04 14 7 work a7_vhd_vec_tst a7_arch 1
-=1-000ae431a4f1-68cc36d6-28a4c-2063
+=1-000ae431a4f1-68cc397b-a3267-2315
 R1
 !s12b OEM100
 !s124 OEM10U2 
@@ -26,7 +28,7 @@ tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
 Ea7
-Z4 w1758213845
+Z4 w1758214522
 Z5 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
 Z6 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 >D>R2d_S6gjU?;50QULVY3
 Z7 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
@@ -34,24 +36,24 @@ Z8 DPx8 cyclonev 19 cyclonev_components 0 22 ONcjb[o^6QUa5nInMXF]50
 Z9 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
 Z10 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
 Z11 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 imPaHK;ANVA2FmRDgd8SZ0
-!i122 4
+!i122 6
 R2
 Z12 8A7.vho
 Z13 FA7.vho
 l0
 L37 1
-Vzoo3i7@fAFW@7XB7Ule`B2
-!s100 ma:]Lf_4bS;b4REIn0[U;2
+VOW@hHLI7[Pd0@mV2?40W01
+!s100 I]knZk[R=ilTdTF2Ib3jQ3
 Z14 OL;C;2023.3;77
 32
-Z15 !s110 1758213845
+R3
 !i10b 1
-Z16 !s108 1758213845.000000
-Z17 !s90 -work|work|A7.vho|
-Z18 !s107 A7.vho|
+Z15 !s108 1758214523.000000
+Z16 !s90 -work|work|A7.vho|
+Z17 !s107 A7.vho|
 !i113 0
-Z19 o-work work
-Z20 tExplicit 1 CvgOpt 0
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
 Astructure
 R5
 R6
@@ -60,30 +62,30 @@ R8
 R9
 R10
 R11
-DEx4 work 2 a7 0 22 zoo3i7@fAFW@7XB7Ule`B2
-!i122 4
+DEx4 work 2 a7 0 22 OW@hHLI7[Pd0@mV2?40W01
+!i122 6
 l74
 L45 228
 Vj7:dEhnOJ2_>o[[6b3IRi2
 !s100 VnUzkn<OE@O^2U_[l:V3]1
 R14
 32
-R15
+R3
 !i10b 1
+R15
 R16
 R17
-R18
 !i113 0
+R18
 R19
-R20
 Ea7_vhd_vec_tst
-Z21 w1758213843
+Z20 w1758214521
 R9
 R10
-!i122 5
+!i122 7
 R2
-Z22 8Waveform.vwf.vht
-Z23 FWaveform.vwf.vht
+Z21 8Waveform.vwf.vht
+Z22 FWaveform.vwf.vht
 l0
 L32 1
 Vh<mb7_DjoIlWPc^2mM`8K2
@@ -92,28 +94,28 @@ R14
 32
 R3
 !i10b 1
-Z24 !s108 1758213846.000000
-Z25 !s90 -work|work|Waveform.vwf.vht|
-Z26 !s107 Waveform.vwf.vht|
+R15
+Z23 !s90 -work|work|Waveform.vwf.vht|
+Z24 !s107 Waveform.vwf.vht|
 !i113 0
+R18
 R19
-R20
 Aa7_arch
 R9
 R10
 DEx4 work 14 a7_vhd_vec_tst 0 22 h<mb7_DjoIlWPc^2mM`8K2
-!i122 5
+!i122 7
 l47
 L34 37
-VblD`UJGV8X2ZlEUYoaIUP2
-!s100 o_Q7NgXgHU6W`]V1zU67D3
+VWElIl`=XNY6Qg_;:@5_T@2
+!s100 P;bbI0d@1aZIcJ3X5Gg3e1
 R14
 32
 R3
 !i10b 1
+R15
+R23
 R24
-R25
-R26
 !i113 0
+R18
 R19
-R20

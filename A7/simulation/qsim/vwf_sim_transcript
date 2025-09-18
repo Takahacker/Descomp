@@ -9,14 +9,14 @@ Note: if both Questa Intel FPGA Edition and ModelSim executables are available, 
 
 quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off A7 -c A7 --vector_source="/home/mahoraga/Descomp/A7/Waveform.vwf" --testbench_file="/home/mahoraga/Descomp/A7/simulation/qsim/Waveform.vwf.vht"
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition    Info: Copyright (C) 2024  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Thu Sep 18 13:44:03 2025Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off A7 -c A7 --vector_source=/home/mahoraga/Descomp/A7/Waveform.vwf --testbench_file=/home/mahoraga/Descomp/A7/simulation/qsim/Waveform.vwf.vhtInfo (119006): Selected device 5CEBA4F23C7 for design "A7"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition    Info: Copyright (C) 2024  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Thu Sep 18 13:55:21 2025Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off A7 -c A7 --vector_source=/home/mahoraga/Descomp/A7/Waveform.vwf --testbench_file=/home/mahoraga/Descomp/A7/simulation/qsim/Waveform.vwf.vhtInfo (119006): Selected device 5CEBA4F23C7 for design "A7"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
 quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/mahoraga/Descomp/A7/simulation/qsim/" A7 -c A7
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition    Info: Copyright (C) 2024  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Thu Sep 18 13:44:04 2025Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/mahoraga/Descomp/A7/simulation/qsim/ A7 -c A7Info (119006): Selected device 5CEBA4F23C7 for design "A7"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file A7.vho in folder "/home/mahoraga/Descomp/A7/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 670 megabytes    Info: Processing ended: Thu Sep 18 13:44:05 2025    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:01
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition    Info: Copyright (C) 2024  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Thu Sep 18 13:55:22 2025Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/mahoraga/Descomp/A7/simulation/qsim/ A7 -c A7Info (119006): Selected device 5CEBA4F23C7 for design "A7"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file A7.vho in folder "/home/mahoraga/Descomp/A7/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 670 megabytes    Info: Processing ended: Thu Sep 18 13:55:22 2025    Info: Elapsed time: 00:00:00    Info: Total CPU time (on all processors): 00:00:01
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
@@ -35,7 +35,7 @@ Reading pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:44:05 on Sep 18,2025
+# Start time: 13:55:23 on Sep 18,2025
 # vcom -work work A7.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -47,23 +47,23 @@ Reading pref.tcl
 # -- Loading package cyclonev_components
 # -- Compiling entity A7
 # -- Compiling architecture structure of A7
-# End time: 13:44:05 on Sep 18,2025, Elapsed time: 0:00:00
+# End time: 13:55:23 on Sep 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Intel Starter FPGA Edition-64 vcom 2023.3 Compiler 2023.07 Jul 17 2023
-# Start time: 13:44:06 on Sep 18,2025
+# Start time: 13:55:23 on Sep 18,2025
 # vcom -work work Waveform.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity A7_vhd_vec_tst
 # -- Compiling architecture A7_arch of A7_vhd_vec_tst
-# End time: 13:44:06 on Sep 18,2025, Elapsed time: 0:00:00
+# End time: 13:55:23 on Sep 18,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -voptargs="+acc" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.A7_vhd_vec_tst # Start time: 13:44:06 on Sep 18,2025# ** Note: (vsim-3813) Design is being optimized due to module recompilation...# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# vsim -voptargs="+acc" -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.A7_vhd_vec_tst # Start time: 13:55:23 on Sep 18,2025# ** Note: (vsim-3813) Design is being optimized due to module recompilation...# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # //  Questa Intel Starter FPGA Edition-64# //  Version 2023.3 linux_x86_64 Jul 17 2023# //# //  Copyright 1991-2023 Mentor Graphics Corporation# //  All Rights Reserved.# //# //  QuestaSim and its associated documentation contain trade# //  secrets and commercial or financial information that are the property of# //  Mentor Graphics Corporation and are privileged, confidential,# //  and exempt from disclosure under the Freedom of Information Act,# //  5 U.S.C. Section 552. Furthermore, this information# //  is prohibited from disclosure under the Trade Secrets Act,# //  18 U.S.C. Section 1905.# //
 # Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.a7_vhd_vec_tst(a7_arch)#1# Loading altera_lnsim.altera_lnsim_components# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading cyclonev.cyclonev_atom_pack(body)# Loading cyclonev.cyclonev_components# Loading work.a7(structure)#1# Loading ieee.std_logic_arith(body)# Loading cyclonev.cyclonev_io_obuf(arch)#1# Loading cyclonev.cyclonev_io_ibuf(arch)#1
 # after#33
-# End time: 13:44:06 on Sep 18,2025, Elapsed time: 0:00:00# Errors: 0, Warnings: 1
+# End time: 13:55:24 on Sep 18,2025, Elapsed time: 0:00:01# Errors: 0, Warnings: 1
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
@@ -74,7 +74,7 @@ Reading /home/mahoraga/Descomp/A7/simulation/qsim/A7.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to /home/mahoraga/Descomp/A7/simulation/qsim/A7_20250918134406.sim.vwf
+Writing the resulting VWF to /home/mahoraga/Descomp/A7/simulation/qsim/A7_20250918135524.sim.vwf
 
 Finished VCD to VWF conversion.
 
