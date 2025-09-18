@@ -8,7 +8,7 @@ entity CPU is
     simulacao        : boolean := TRUE
   );
   port (
-    CLOCK	         : in  std_logic;
+   CLOCK	         : in  std_logic;
 	 RESET            : in  std_logic;
 	 RD               : out std_logic;
 	 WR               : out std_logic;
@@ -139,26 +139,10 @@ begin
       zero     => SinalZero
     );
 
-  -- ROM (13 bits)
-  ROM1 : entity work.memoriaROM
-    generic map (dataWidth => 13, addrWidth => larguraEnderecos)
-    port map (Endereco => Endereco, Dado => instr);
-
   -- Decoder (12 sinais)
   DEC1 : entity work.decoderInstru
     port map (opcode => instr(12 downto 9), saida => SinaisCtrl12);
 
-  -- RAM
-  RAM1 : entity work.memoriaRAM
-    port map (
-      addr     => instr(7 downto 0),
-      we       => habEscritaMEM,
-      re       => habLeituraMEM,
-      habilita => instr(8),
-      clk      => CLK,
-      dado_in  => REG1_ULA_A,
-      dado_out => Saida_RAM
-    );
 
   -- Flag zero da ULA
   FlagIgual: entity work.flipflop

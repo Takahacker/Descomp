@@ -35,22 +35,18 @@ architecture assincrona of memoriaROM is
         return blocoMemoria is variable tmp : blocoMemoria := (others => (others => '0'));
   begin
   
-    tmp(0)  := JSR & "000001110";   -- JSR @14
-    tmp(1)  := JMP & "000000101";   -- JMP @5
-    tmp(2)  := JEQ & "000001001";   -- JEQ @9
-    tmp(3)  := NOP & "000000000";   -- NOP
-    tmp(4)  := NOP & "000000000";   -- NOP
-    tmp(5)  := LDI & "000000101";   -- LDI $5
-    tmp(6)  := STA & "100000000";   -- STA @256
-    tmp(7)  := CEQ & "100000000";   -- CEQ @256
-    tmp(8)  := JMP & "000000010";   -- JMP @2
-    tmp(9)  := NOP & "000000000";   -- NOP
-    tmp(10) := LDI & "000000100";   -- LDI $4
-    tmp(11) := CEQ & "100000000";   -- CEQ @256
-    tmp(12) := JEQ & "000000011";   -- JEQ @3
-    tmp(13) := JMP & "000001101";   -- JMP @13
-    tmp(14) := NOP & "000000000";   -- NOP
-    tmp(15) := RET & "000000001";   -- RET @1
+    tmp(0) := LDI    & "000000001";
+    tmp(1) := STA    & "000" & "000000";
+    tmp(2) := SOMA   & "000" & "000000";
+    tmp(3) := STA    & "000" & "000001";
+    tmp(4) := LDA    & "000" & "000000";
+    tmp(5) := STA    & "011" & "000" & "001";
+    tmp(6) := STA    & "011" & "000" & "010";
+    tmp(7) := LDI    & "001010101";
+    tmp(8) := STA    & "011" & "000" & "000";
+    tmp(9) := LDI    & "010101010";
+    tmp(10) := STA   & "011" & "000" & "000";
+    tmp(11) := JMP   & "000001011";
 
     return tmp;	
 
