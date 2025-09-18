@@ -10,7 +10,7 @@ entity A7 is
   port (
 	 CLOCK_50 : in std_logic;
 	 KEY: in std_logic_vector(3 downto 0);
-   LEDR  : out std_logic_vector(9 downto 0)
+    LEDR  : out std_logic_vector(9 downto 0)
    );
   
 end entity;
@@ -26,24 +26,24 @@ architecture arquitetura of A7 is
 -- CPU
   signal Escrita: std_logic;
   signal Leitura: std_logic;
-  signal LeituraDeDados: std_logic_vector(larguraDados-1 dowto 0);
+  signal LeituraDeDados: std_logic_vector(larguraDados-1 downto 0);
   signal EscritaDeDados: std_logic_vector(larguraDados-1 downto 0);
-  signal SaidaDataAddress: std_logic_vector(5 downto 0);
+  signal SaidaDataAddress: std_logic_vector(8 downto 0);
   signal EnderecoROM: std_logic_vector(larguraEnderecos-1 downto 0);
 
 -- ROM 
-  signal Instrucao;
+  signal Instrucao: std_logic_vector(12 downto 0);
 	
 -- Decoder1
-  signal SaidaDec1;
+  signal SaidaDec1: std_logic_vector(7 downto 0);
 -- Decoder2
-  signal SaidaDec2;
+  signal SaidaDec2: std_logic_vector(7 downto 0);
 
 
 -- LEDs
-  signal HabilitaLed0;
-  signal HabilitaLed1;
-  signal HabilitaLed2;
+  signal HabilitaLed0: std_logic;
+  signal HabilitaLed1: std_logic;
+  signal HabilitaLed2: std_logic;
 -- ======================================================================
 
 begin
@@ -61,8 +61,8 @@ begin
 	port map(
 	 CLOCK	         => CLK,
 	 RESET           => '0', 
-	 RD              => Escrita,
-	 WR              => Leitura,
+	 RD              => Leitura,
+	 WR              => Escrita,
 	 ROM_ADDRESS     => EnderecoROM,
 	 INSTRUCTION_IN  => Instrucao,
 	 DATA_IN         => LeituraDeDados,
@@ -100,7 +100,7 @@ begin
   -- Decoder RAM
   Dec1 :  entity work.decoder3x8
     port map(
-      entrada => SaidaDataAddress(6 downto 8),
+      entrada => SaidaDataAddress(8 downto 6),
       saida => SaidaDec1
     );
 
@@ -113,8 +113,8 @@ begin
 
   -- Habilta led --------------------------------------------
   HabilitaLed0 <= SaidaDec1(4) and SaidaDec2(0) and Escrita;
-  HabilitaLed0 <= SaidaDec1(4) and SaidaDec2(1) and Escrita;
-  HabilitaLed0 <= SaidaDec1(4) and SaidaDec2(2) and Escrita;
+  HabilitaLed1 <= SaidaDec1(4) and SaidaDec2(1) and Escrita;
+  HabilitaLed2 <= SaidaDec1(4) and SaidaDec2(2) and Escrita;
 
   
 
@@ -131,7 +131,7 @@ begin
   FlipFlopLed1: entity work.flipflop
     port map(
       DIN    => EscritaDeDados(0),
-      DOUT   => LED(8),
+      DOUT   => LEDR(8),
       ENABLE => HabilitaLed1,
       CLK    => CLK,
       RST    => '0'
@@ -140,7 +140,7 @@ begin
   FlipFlopLed2: entity work.flipflop
     port map(
       DIN    => EscritaDeDados(0),
-      DOUT   => LED(9),
+      DOUT   => LEDR(9),
       ENABLE => HabilitaLed2,
       CLK    => CLK,
       RST    => '0'

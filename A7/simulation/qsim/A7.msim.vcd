@@ -1,0 +1,228 @@
+$comment
+	File created using the following command:
+		vcd file A7.msim.vcd -direction
+$end
+$date
+	Thu Sep 18 13:44:06 2025
+$end
+$version
+	Questa Intel Starter FPGA Edition Version 2023.3
+$end
+$timescale
+	1ps
+$end
+
+$scope module a7_vhd_vec_tst $end
+$var wire 1 ! CLOCK_50 $end
+$var wire 1 " KEY [3] $end
+$var wire 1 # KEY [2] $end
+$var wire 1 $ KEY [1] $end
+$var wire 1 % KEY [0] $end
+$var wire 1 & LEDR [9] $end
+$var wire 1 ' LEDR [8] $end
+$var wire 1 ( LEDR [7] $end
+$var wire 1 ) LEDR [6] $end
+$var wire 1 * LEDR [5] $end
+$var wire 1 + LEDR [4] $end
+$var wire 1 , LEDR [3] $end
+$var wire 1 - LEDR [2] $end
+$var wire 1 . LEDR [1] $end
+$var wire 1 / LEDR [0] $end
+
+$scope module i1 $end
+$var wire 1 0 gnd $end
+$var wire 1 1 vcc $end
+$var wire 1 2 unknown $end
+$var wire 1 3 devoe $end
+$var wire 1 4 devclrn $end
+$var wire 1 5 devpor $end
+$var wire 1 6 ww_devoe $end
+$var wire 1 7 ww_devclrn $end
+$var wire 1 8 ww_devpor $end
+$var wire 1 9 ww_CLOCK_50 $end
+$var wire 1 : ww_KEY [3] $end
+$var wire 1 ; ww_KEY [2] $end
+$var wire 1 < ww_KEY [1] $end
+$var wire 1 = ww_KEY [0] $end
+$var wire 1 > ww_LEDR [9] $end
+$var wire 1 ? ww_LEDR [8] $end
+$var wire 1 @ ww_LEDR [7] $end
+$var wire 1 A ww_LEDR [6] $end
+$var wire 1 B ww_LEDR [5] $end
+$var wire 1 C ww_LEDR [4] $end
+$var wire 1 D ww_LEDR [3] $end
+$var wire 1 E ww_LEDR [2] $end
+$var wire 1 F ww_LEDR [1] $end
+$var wire 1 G ww_LEDR [0] $end
+$var wire 1 H \CLOCK_50~input_o\ $end
+$var wire 1 I \KEY[1]~input_o\ $end
+$var wire 1 J \KEY[2]~input_o\ $end
+$var wire 1 K \KEY[3]~input_o\ $end
+$var wire 1 L \KEY[0]~input_o\ $end
+$var wire 1 M \LEDR[0]~output_o\ $end
+$var wire 1 N \LEDR[1]~output_o\ $end
+$var wire 1 O \LEDR[2]~output_o\ $end
+$var wire 1 P \LEDR[3]~output_o\ $end
+$var wire 1 Q \LEDR[4]~output_o\ $end
+$var wire 1 R \LEDR[5]~output_o\ $end
+$var wire 1 S \LEDR[6]~output_o\ $end
+$var wire 1 T \LEDR[7]~output_o\ $end
+$var wire 1 U \LEDR[8]~output_o\ $end
+$var wire 1 V \LEDR[9]~output_o\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x!
+00
+11
+x2
+13
+14
+15
+16
+17
+18
+x9
+xH
+xI
+xJ
+xK
+1L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+0T
+0U
+0V
+0>
+0?
+0@
+0A
+0B
+0C
+0D
+0E
+0F
+0G
+x"
+x#
+x$
+1%
+0&
+0'
+0(
+0)
+0*
+0+
+0,
+0-
+0.
+0/
+x:
+x;
+x<
+1=
+$end
+#40000
+0%
+0=
+0L
+#80000
+1%
+1=
+1L
+#120000
+0%
+0=
+0L
+#160000
+1%
+1=
+1L
+#200000
+0%
+0=
+0L
+#240000
+1%
+1=
+1L
+#280000
+0%
+0=
+0L
+#320000
+1%
+1=
+1L
+#360000
+0%
+0=
+0L
+#400000
+1%
+1=
+1L
+#440000
+0%
+0=
+0L
+#480000
+1%
+1=
+1L
+#520000
+0%
+0=
+0L
+#560000
+1%
+1=
+1L
+#600000
+0%
+0=
+0L
+#640000
+1%
+1=
+1L
+#680000
+0%
+0=
+0L
+#720000
+1%
+1=
+1L
+#760000
+0%
+0=
+0L
+#800000
+1%
+1=
+1L
+#840000
+0%
+0=
+0L
+#880000
+1%
+1=
+1L
+#920000
+0%
+0=
+0L
+#960000
+1%
+1=
+1L
+#1000000
