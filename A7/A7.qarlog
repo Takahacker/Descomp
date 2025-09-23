@@ -1,0 +1,30 @@
+Quartus Prime Archive log --	/home/mahoraga/Descomp/A7/A7.qarlog
+
+Archive:	/home/mahoraga/Descomp/A7/A7.qar
+Date:		Mon Sep 22 15:50:13 2025
+Quartus Prime		23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+	=========== Files Selected: ===========
+/home/mahoraga/Descomp/A7/A7.qpf
+/home/mahoraga/Descomp/A7/A7.qsf
+/home/mahoraga/Descomp/A7/A7.vhd
+/home/mahoraga/Descomp/A7/CPU.vhd
+/home/mahoraga/Descomp/A7/ULASomaSub.vhd
+/home/mahoraga/Descomp/A7/Waveform1.vwf
+/home/mahoraga/Descomp/A7/decoder3x8.vhd
+/home/mahoraga/Descomp/A7/decoderInstru.vhd
+/home/mahoraga/Descomp/A7/edgeDetector.vhd
+/home/mahoraga/Descomp/A7/flipflop.vhd
+/home/mahoraga/Descomp/A7/logicaDesvio.vhd
+/home/mahoraga/Descomp/A7/memoriaRAM.vhd
+/home/mahoraga/Descomp/A7/memoriaROM.vhd
+/home/mahoraga/Descomp/A7/muxGenerico2x1.vhd
+/home/mahoraga/Descomp/A7/muxGenerico4x1.vhd
+/home/mahoraga/Descomp/A7/registradorGenerico.vhd
+/home/mahoraga/Descomp/A7/somaConstante.vhd
+/home/mahoraga/Descomp/A7/somadorGenerico.vhd
+/home/mahoraga/intelFPGA_lite/23.1std/quartus/linux64/assignment_defaults.qdf
+	======= Total: 19 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

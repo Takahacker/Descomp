@@ -18,10 +18,22 @@ LEDR[6] <= registradorgenerico:RegLed0.DOUT[6]
 LEDR[7] <= registradorgenerico:RegLed0.DOUT[7]
 LEDR[8] <= flipflop:FlipFlopLed1.DOUT
 LEDR[9] <= flipflop:FlipFlopLed2.DOUT
+PC_OUT[0] <= cpu:CPU.ROM_ADDRESS[0]
+PC_OUT[1] <= cpu:CPU.ROM_ADDRESS[1]
+PC_OUT[2] <= cpu:CPU.ROM_ADDRESS[2]
+PC_OUT[3] <= cpu:CPU.ROM_ADDRESS[3]
+PC_OUT[4] <= cpu:CPU.ROM_ADDRESS[4]
+PC_OUT[5] <= cpu:CPU.ROM_ADDRESS[5]
+PC_OUT[6] <= cpu:CPU.ROM_ADDRESS[6]
+PC_OUT[7] <= cpu:CPU.ROM_ADDRESS[7]
+PC_OUT[8] <= cpu:CPU.ROM_ADDRESS[8]
 
 
 |A7|CPU:CPU
-CLOCK => ~NO_FANOUT~
+CLOCK => registradorgenerico:REGA.CLK
+CLOCK => registradorgenerico:PC.CLK
+CLOCK => registradorgenerico:EndRetorno.CLK
+CLOCK => flipflop:FlagIgual.CLK
 RESET => registradorgenerico:PC.RST
 RD <= decoderinstru:DEC1.saida[1]
 WR <= decoderinstru:DEC1.saida[0]

@@ -7,6 +7,10 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
 !s11e vcom 2023.3 2023.07, Jul 17 2023
 13
 !s112 1.1
@@ -16,10 +20,10 @@ R1
 cModel Technology
 Z2 d/home/mahoraga/Descomp/A7/simulation/qsim
 T_opt
-Z3 !s110 1758214523
-Vfh:0_LgfkMN>DZ4k^Sei50
+!s110 1758566905
+VMfPgW92:>jVV_@ZTR;bV]0
 04 14 7 work a7_vhd_vec_tst a7_arch 1
-=1-000ae431a4f1-68cc397b-a3267-2315
+=1-000ae431a4f1-68d199f9-2a772-28c3
 R1
 !s12b OEM100
 !s124 OEM10U2 
@@ -28,33 +32,36 @@ tCvgOpt 0
 n@_opt
 OL;O;2023.3;77
 Ea7
-Z4 w1758214522
-Z5 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
-Z6 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 >D>R2d_S6gjU?;50QULVY3
-Z7 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
-Z8 DPx8 cyclonev 19 cyclonev_components 0 22 ONcjb[o^6QUa5nInMXF]50
-Z9 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
-Z10 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-Z11 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 imPaHK;ANVA2FmRDgd8SZ0
-!i122 6
+Z3 w1758566903
+Z4 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 >D>R2d_S6gjU?;50QULVY3
+Z5 DPx8 cyclonev 19 cyclonev_components 0 22 ONcjb[o^6QUa5nInMXF]50
+Z6 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 imPaHK;ANVA2FmRDgd8SZ0
+Z7 DPx4 ieee 16 vital_primitives 0 22 Y]H?Y_]z4@VoaWAGJ=36m1
+Z8 DPx6 altera 11 dffeas_pack 0 22 zdIMR1XmDVjRfzNPY?MRj3
+Z9 DPx4 ieee 12 vital_timing 0 22 6STbz=m1W[80IE06h_el^0
+Z10 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z11 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+Z12 DPx6 altera 28 altera_primitives_components 0 22 E4E]JL`Gg4N^O71N]`[G;0
+!i122 14
 R2
-Z12 8A7.vho
-Z13 FA7.vho
+Z13 8A7.vho
+Z14 FA7.vho
 l0
-L37 1
-VOW@hHLI7[Pd0@mV2?40W01
-!s100 I]knZk[R=ilTdTF2Ib3jQ3
-Z14 OL;C;2023.3;77
+L39 1
+V:ab`EGSOW6J=4L^632eH83
+!s100 X<bigjO74bz3a4DK`MJG70
+Z15 OL;C;2023.3;77
 32
-R3
+Z16 !s110 1758566904
 !i10b 1
-Z15 !s108 1758214523.000000
-Z16 !s90 -work|work|A7.vho|
-Z17 !s107 A7.vho|
+Z17 !s108 1758566904.000000
+Z18 !s90 -work|work|A7.vho|
+Z19 !s107 A7.vho|
 !i113 0
-Z18 o-work work
-Z19 tExplicit 1 CvgOpt 0
+Z20 o-work work
+Z21 tExplicit 1 CvgOpt 0
 Astructure
+R4
 R5
 R6
 R7
@@ -62,60 +69,61 @@ R8
 R9
 R10
 R11
-DEx4 work 2 a7 0 22 OW@hHLI7[Pd0@mV2?40W01
-!i122 6
-l74
-L45 228
-Vj7:dEhnOJ2_>o[[6b3IRi2
-!s100 VnUzkn<OE@O^2U_[l:V3]1
-R14
-32
-R3
-!i10b 1
+R12
+DEx4 work 2 a7 0 22 :ab`EGSOW6J=4L^632eH83
+!i122 14
+l189
+L48 1767
+VUJ<WTO@UMC>^z81CURmcf3
+!s100 lM@aTi8Pl?cd^4DK]Z;0`2
 R15
+32
 R16
+!i10b 1
 R17
-!i113 0
 R18
 R19
+!i113 0
+R20
+R21
 Ea7_vhd_vec_tst
-Z20 w1758214521
-R9
+Z22 w1758566900
 R10
-!i122 7
+R11
+!i122 15
 R2
-Z21 8Waveform.vwf.vht
-Z22 FWaveform.vwf.vht
+Z23 8Waveform1.vwf.vht
+Z24 FWaveform1.vwf.vht
 l0
 L32 1
 Vh<mb7_DjoIlWPc^2mM`8K2
 !s100 mUZS;c_CIQCLNhF<<EP>82
-R14
-32
-R3
-!i10b 1
 R15
-Z23 !s90 -work|work|Waveform.vwf.vht|
-Z24 !s107 Waveform.vwf.vht|
+32
+R16
+!i10b 1
+R17
+Z25 !s90 -work|work|Waveform1.vwf.vht|
+Z26 !s107 Waveform1.vwf.vht|
 !i113 0
-R18
-R19
+R20
+R21
 Aa7_arch
-R9
 R10
+R11
 DEx4 work 14 a7_vhd_vec_tst 0 22 h<mb7_DjoIlWPc^2mM`8K2
-!i122 7
-l47
-L34 37
-VWElIl`=XNY6Qg_;:@5_T@2
-!s100 P;bbI0d@1aZIcJ3X5Gg3e1
-R14
-32
-R3
-!i10b 1
+!i122 15
+l49
+L34 40
+Vc[Pid[=EjGO@87ce`0K7z0
+!s100 ^23__f2_bMORc=9<1S?3E2
 R15
-R23
-R24
+32
+R16
+!i10b 1
+R17
+R25
+R26
 !i113 0
-R18
-R19
+R20
+R21

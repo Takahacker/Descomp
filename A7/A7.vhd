@@ -10,7 +10,8 @@ entity A7 is
   port (
 	 CLOCK_50 : in std_logic;
 	 KEY: in std_logic_vector(3 downto 0);
-    LEDR  : out std_logic_vector(9 downto 0)
+    LEDR  : out std_logic_vector(9 downto 0);
+	 PC_OUT : out std_logic_vector(8 downto 0)
    );
   
 end entity;
@@ -26,10 +27,10 @@ architecture arquitetura of A7 is
 -- CPU
   signal Escrita: std_logic;
   signal Leitura: std_logic;
-  signal LeituraDeDados: std_logic_vector(larguraDados-1 downto 0);
-  signal EscritaDeDados: std_logic_vector(larguraDados-1 downto 0);
+  signal LeituraDeDados: std_logic_vector(7 downto 0);
+  signal EscritaDeDados: std_logic_vector(7 downto 0);
   signal SaidaDataAddress: std_logic_vector(8 downto 0);
-  signal EnderecoROM: std_logic_vector(larguraEnderecos-1 downto 0);
+  signal EnderecoROM: std_logic_vector(8 downto 0);
 
 -- ROM 
   signal Instrucao: std_logic_vector(12 downto 0);
@@ -145,6 +146,8 @@ begin
       CLK    => CLK,
       RST    => '0'
     );
+	 
+	 PC_OUT <= EnderecoROM;
 
 
     

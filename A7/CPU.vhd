@@ -68,6 +68,9 @@ architecture arquitetura of CPU is
   
 
 begin
+  -- Conecta o clock interno ao clock de entrada
+  CLK <= CLOCK;
+
 	instr <= INSTRUCTION_IN;
 
   -- MUX: entrada B da ULA (RAM vs imediato instr[7..0])

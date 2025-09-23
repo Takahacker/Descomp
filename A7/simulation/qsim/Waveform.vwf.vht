@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "09/18/2025 13:55:21"
+-- Generated on "09/22/2025 15:38:28"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          A7
 -- 
@@ -37,11 +37,13 @@ ARCHITECTURE A7_arch OF A7_vhd_vec_tst IS
 SIGNAL CLOCK_50 : STD_LOGIC;
 SIGNAL KEY : STD_LOGIC_VECTOR(3 DOWNTO 0);
 SIGNAL LEDR : STD_LOGIC_VECTOR(9 DOWNTO 0);
+SIGNAL PC_OUT : STD_LOGIC_VECTOR(8 DOWNTO 0);
 COMPONENT A7
 	PORT (
 	CLOCK_50 : IN STD_LOGIC;
 	KEY : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0)
+	LEDR : OUT STD_LOGIC_VECTOR(9 DOWNTO 0);
+	PC_OUT : OUT STD_LOGIC_VECTOR(8 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
@@ -50,7 +52,8 @@ BEGIN
 -- list connections between master ports and signals
 	CLOCK_50 => CLOCK_50,
 	KEY => KEY,
-	LEDR => LEDR
+	LEDR => LEDR,
+	PC_OUT => PC_OUT
 	);
 
 -- KEY[0]
